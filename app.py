@@ -1,15 +1,11 @@
 import os
-from flask import Flask, jsonify
+from flask import Flask
 
 app = Flask(__name__)
 
 @app.route("/")
-def health():
-    return "CommCare Cloud Run service is alive"
-
-@app.route("/run")
-def run():
-    return jsonify({"status": "ok"})
+def index():
+    return "Cloud Run is working"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
